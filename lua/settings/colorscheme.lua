@@ -1,12 +1,14 @@
-local gruvbox = require("gruvbox")
 local treesitter = require('nvim-treesitter.configs')
 local cmd = vim.cmd
 
 -- Colorscheme
-gruvbox.setup({
-	transparent_mode = true
-})
-cmd('colorscheme gruvbox')
+--gruvbox.setup({
+------------------	transparent_mode = true
+--})
+--cmd('colorscheme gruvbox')
+--
+cmd('autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE')
+cmd('colorscheme ayu-dark')
 
 -- Treesitter
 treesitter.setup({

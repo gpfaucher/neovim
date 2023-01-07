@@ -18,6 +18,7 @@ packer.startup({ function(use)
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-cmdline',
+			'onsails/lspkind.nvim'
 		}
 	}
 	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
@@ -33,6 +34,8 @@ packer.startup({ function(use)
 	-- Colors
 	use { "ellisonleao/gruvbox.nvim" }
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use 'Shatur/neovim-ayu'
+
 
 	-- File management
 	use {
