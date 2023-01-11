@@ -2,12 +2,31 @@ local packer = require('packer')
 
 packer.startup({ function(use)
 	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+	use {
+		'wbthomason/packer.nvim',
+		config = function() require 'colorizer'.setup() end
+	}
+
+	use 'NvChad/nvim-colorizer.lua'
 
 	-- Git integration
 	use {
 		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
 		config = function() require('gitsigns').setup() end
+	}
+
+	-- Indents
+	use {
+		'lukas-reineke/indent-blankline.nvim',
+		config = function() require('indent_blankline').setup() end
+	}
+
+	-- Comments
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
 	}
 
 	-- Completion & LSP

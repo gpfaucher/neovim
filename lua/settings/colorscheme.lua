@@ -1,14 +1,16 @@
 local treesitter = require('nvim-treesitter.configs')
 local cmd = vim.cmd
 
--- Colorscheme
---gruvbox.setup({
-------------------	transparent_mode = true
---})
---cmd('colorscheme gruvbox')
---
+-- Force transparency with Ayu
 cmd('autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE')
+cmd('highlight GitSignsAdd guibg=NONE')
+cmd('highlight GitSignsChange guibg=NONE')
+cmd('highlight GitSignsDelete guibg=NONE')
+cmd('highlight SignColumn guibg=NONE')
+cmd('autocmd ColorScheme * highlight SignColumn guibg=NONE')
 cmd('colorscheme ayu-dark')
+
+
 
 -- Treesitter
 treesitter.setup({
